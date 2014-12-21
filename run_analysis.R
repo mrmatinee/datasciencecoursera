@@ -1,4 +1,7 @@
-## List all the files in the working directory (in my case "Project Data")
+## set working directory
+setwd("~/Desktop/Spider Storage/Getting Data Course/Project Data")
+
+## List all the files in the directory "Project Data"
 allfiles <- list.files(, recursive=TRUE)
 ## print list of files to catalog what's in the working directory
 allfiles
@@ -82,16 +85,8 @@ for(i in 1:labelNum){
 }
 
 ## Save the output files.
-write.table(master, "masterdata.txt", row.names=TRUE, col.names=TRUE) 
-write.table(output, "activitysubjectmeans.txt", row.names=TRUE, col.names=TRUE) 
-listOfVariables <- data.frame(names(output))
-
-##Write the output file
-write.csv(listOfVariables, "listOfVariables.csv")
+write.table(output, "output.txt", row.names=TRUE, col.names=TRUE) 
 
 ## Remove working files.
 rm(tmpAct, tmpActSubj, labels, listOfVariables)
 rm(master, output, i, j, k, labelNum, outputCtr, subjectNum, allfiles)
-
-## Reset working directory
-setwd("../")
