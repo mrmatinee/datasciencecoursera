@@ -1,7 +1,4 @@
-## set working directory
-setwd("~/Desktop/Spider Storage/Getting Data Course/Project Data")
-
-## List all the files in the directory "Project Data"
+## List all the files in the working directory (in my case "Project Data")
 allfiles <- list.files(, recursive=TRUE)
 ## print list of files to catalog what's in the working directory
 allfiles
